@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Slot Allotment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Temporarily add essential CSS for the edit form */
+        #editFormContainer {
+            border: 2px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #eaf6ff;
+            display: none; /* Hidden by default */
+        }
+        #editFormContainer h3 { margin-top: 0; color: #007bff; }
+        .edit-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        /* Style for person list buttons */
+        #personList button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+        .edit-btn { background-color: #ffc107; color: #333; }
+        .edit-btn:hover { background-color: #e0a800; }
+        .delete-btn { background-color: #dc3545; }
+        .delete-btn:hover { background-color: #c82333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Slot Allotment</h1>
+
+        <div class="controls">
+            <h2>➕ Add New Person and Set Eligibility</h2>
+            <div class="person-input">
+                <input type="text" id="personName" placeholder="Enter person's name">
+                <div class="eligibility-group">
+                    <label>Eligible for:</label>
+                    <label><input type="checkbox" id="eligibleA"> Slot A</label>
+                    <label><input type="checkbox" id="eligibleB"> Slot B</label>
+                    <label><input type="checkbox" id="eligibleC"> Slot C</label>
+                </div>
+                <button onclick="addPerson()">Add Person</button>
+            </div>
+            <p class="history-note">Current pool: <span id="personCount">0</span> people.</p>
+        </div>
+
+        <div id="absenceList">
+            <h2>👥 All People & Absences for Today</h2>
+            
+            <div id="editFormContainer">
+                <h3>✏️ Edit Person: <span id="editingNameDisplay"></span></h3>
+                <input type="hidden" id="editOriginalName">
+                <div class="edit-controls">
+                    <input type="text" id="editPersonName" placeholder="New Name" style="flex-grow: 1;">
+                    <label><input type="checkbox" id="editEligibleA"> Slot A</label>
+                    <label><input type="checkbox" id="editEligibleB"> Slot B</label>
+                    <label><input type="checkbox" id="editEligibleC"> Slot C</label>
+                    <button onclick="saveEdit()" style="background-color: #28a745;">Save</button>
+                    <button onclick="cancelEdit()" style="background-color: #6c757d;">Cancel</button>
+                </div>
+            </div>
+            
+            <ul id="personList">
+                </ul>
+        </div>
+        
+        <button id="generateBtn" onclick="generateAllotment()">Generate Today's Allotment</button>
+
+        <div id="allotmentResult">
+            <h2>📅 Today's Allotment</h2>
+            <div id="slotA" class="slot">Slot A: -</div>
+            <div id="slotB" class="slot">Slot B: -</div>
+            <div id="slotC" class="slot">Slot C: -</div>
+        </div>
+
+        <div class="history">
+            <h2>📜 Last Assignment Cycles (History)</h2>
+            <pre id="historyDisplay"></pre>
+            <button onclick="clearHistory()">Reset All Data</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

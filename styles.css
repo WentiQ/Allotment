@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    color: #555;
+}
+
+.controls, .history {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.person-input input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#generateBtn {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #28a745;
+}
+
+#generateBtn:hover {
+    background-color: #1e7e34;
+}
+
+#personList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#personList li {
+    background: #e9ecef;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+#personList li input[type="checkbox"] {
+    margin-left: 10px;
+    transform: scale(1.3);
+}
+
+#allotmentResult {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+}
+
+.slot {
+    font-size: 1.2em;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #eaf6ff;
+    border-left: 5px solid #007bff;
+}
+
+#historyDisplay {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.history button {
+    margin-top: 10px;
+    background-color: #dc3545;
+}
+
+.history button:hover {
+    background-color: #c82333;
+}
+/* Add to styles.css */
+
+.eligibility-group {
+    margin: 10px 0;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.eligibility-group label {
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.person-input {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px;
+}
+.person-input input[type="text"] {
+    width: 100%; /* Make input take full width */
+    box-sizing: border-box;
+}
+.person-input button {
+    width: 100%;
+}
